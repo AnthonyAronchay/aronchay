@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Hobbies</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('assets/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 20%;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .sidebar button {
+      width: 100%;
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 15px;
+      margin: 10px 0;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .sidebar button:hover {
+      background-color: #666;
+    }
+
+    .content {
+      width: 80%;
+      padding: 30px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .gallery {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery.active {
+      display: flex;
+    }
+
+    .gallery img {
+      width: 180px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery a img:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+
+    .intro {
+      font-size: 20px;
+      text-align: center;
+      margin-top: 100px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 8px 15px;
+      font-size: 14px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 10px;
+    }
+  </style>
+
+  <script>
+    function showGallery(id) {
+      document.querySelectorAll('.gallery').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function goHome() {
+      document.querySelectorAll('.gallery').forEach(el => el.classList.remove('active'));
+      document.getElementById('home').classList.add('active');
+    }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+      <h1>My Hobbies</h1>
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="showGallery('about')">🙋 About Me</button>
+      <button onclick="showGallery('contact')">📩 Contact</button>
+      <button onclick="showGallery('photography')">📸 Photography</button>
+      <button onclick="showGallery('movies')">🎬 Watching Movies</button>
+      <button onclick="showGallery('running')">🏃 Running</button>
+      <button onclick="showGallery('workout')">💪 Working Out</button>
+      <button onclick="showGallery('taekwondo')">🥋 Taekwondo</button>
+    </div>
+
+    <div class="content">
+      <!-- Homepage Intro -->
+      <div id="home" class="gallery active">
+        <p class="intro">
+          👋 Hello! I'm Anthony, and welcome to my personal website, a space I created to share my passions. Here, you'll get a glimpse into the things I love doing in my free time, from capturing moments through photography to staying active with fitness and running. I'm also a big movie enthusiast, so you'll find me sharing my thoughts on films as a way of self expression. This site is a fun way for me to showcase my hobbies and connect with others who share similar interests. Feel free to explore and get to know me better! 📸🎬🏃‍♂️💪
+        </p>
+      </div>
+
+      <!-- About Me -->
+      <div id="about" class="gallery">
+        <p class="intro">
+         Hello, everyone. My name is Anthony Aronchay Jr F, and I'm an incoming second-year Criminology student at the University of the Cordilleras. I'm excited to continue my studies and deepen my understanding of crime, law, and justice, a subject I'm passionate about. Outside of my academics, I have a creative and active side. I love photography, fitness, movies, and self-expression, and I've created a personal gallery to share the things I enjoy doing in my free time. I believe these hobbies help me stay balanced and bring a unique perspective to my studies, and I look forward to connecting with all of you as I continue my academic journey.
+        </p>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+
+      <!-- Contact -->
+      <div id="contact" class="gallery">
+        <p class="intro">
+          You can reach out to me through my socials or send me an email. I’d love to connect!
+        </p>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+
+      <!-- Photography -->
+      <div id="photography" class="gallery">
+        <a href="assets/a.jpg" target="_blank"><img src="assets/a.jpg"></a>
+        <a href="assets/aa.jpg" target="_blank"><img src="assets/aa.jpg"></a>
+        <a href="assets/aaa.jpg" target="_blank"><img src="assets/aaa.jpg"></a>
+        <a href="assets/aaaa.jpg" target="_blank"><img src="assets/aaaa.jpg"></a>
+        <a href="assets/aaaaa.jpg" target="_blank"><img src="assets/aaaaa.jpg"></a>
+        <a href="assets/aaaaaa.jpg" target="_blank"><img src="assets/aaaaaa.jpg"></a>
+        <a href="assets/aaaaaaa.jpg" target="_blank"><img src="assets/aaaaaaa.jpg"></a>
+        <a href="assets/aaaaaaaa.jpg" target="_blank"><img src="assets/aaaaaaaa.jpg"></a>
+        <a href="assets/aaaaaaaaa.jpg" target="_blank"><img src="assets/aaaaaaaaa.jpg"></a>
+        <a href="assets/aaaaaaaaaa.jpg" target="_blank"><img src="assets/aaaaaaaaaa.jpg"></a>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+
+      <!-- Movies -->
+      <div id="movies" class="gallery">
+        <a href="assets/1.jpg" target="_blank"><img src="assets/1.jpg"></a>
+        <a href="assets/2.jpg" target="_blank"><img src="assets/2.jpg"></a>
+        <a href="assets/3.jpg" target="_blank"><img src="assets/3.jpg"></a>
+        <a href="assets/4.jpg" target="_blank"><img src="assets/4.jpg"></a>
+        <a href="assets/5.jpg" target="_blank"><img src="assets/5.jpg"></a>
+        <a href="assets/6.jpg" target="_blank"><img src="assets/6.jpg"></a>
+        <a href="assets/7.jpg" target="_blank"><img src="assets/7.jpg"></a>
+        <a href="assets/8.jpg" target="_blank"><img src="assets/8.jpg"></a>
+        <a href="assets/9.jpg" target="_blank"><img src="assets/9.jpg"></a>
+        <a href="assets/10.jpg" target="_blank"><img src="assets/10.jpg"></a>
+        <a href="assets/11.jpg" target="_blank"><img src="assets/11.jpg"></a>
+        <a href="assets/12.jpg" target="_blank"><img src="assets/12.jpg"></a>
+        <a href="assets/13.jpg" target="_blank"><img src="assets/13.jpg"></a>
+        <a href="assets/14.jpg" target="_blank"><img src="assets/14.jpg"></a>
+        <a href="assets/15.jpg" target="_blank"><img src="assets/15.jpg"></a>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+
+      <!-- Running -->
+      <div id="running" class="gallery">
+        <a href="assets/b.jpg" target="_blank"><img src="assets/b.jpg"></a>
+        <a href="assets/bb.jpg" target="_blank"><img src="assets/bb.jpg"></a>
+        <a href="assets/bbb.jpg" target="_blank"><img src="assets/bbb.jpg"></a>
+        <a href="assets/bbbb.jpg" target="_blank"><img src="assets/bbbb.jpg"></a>
+        <a href="assets/bbbbb.jpg" target="_blank"><img src="assets/bbbbb.jpg"></a>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+
+      <!-- Workout -->
+      <div id="workout" class="gallery">
+        <a href="assets/d.jpg" target="_blank"><img src="assets/d.jpg"></a>
+        <a href="assets/dd.jpg" target="_blank"><img src="assets/dd.jpg"></a>
+        <a href="assets/ddd.jpg" target="_blank"><img src="assets/ddd.jpg"></a>
+        <a href="assets/dddd.jpg" target="_blank"><img src="assets/dddd.jpg"></a>
+        <a href="assets/ddddd.jpg" target="_blank"><img src="assets/ddddd.jpg"></a>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+
+      <!-- Taekwondo -->
+      <div id="taekwondo" class="gallery">
+        <p class="intro">🥋 I enjoy practicing Taekwondo to stay disciplined and strong! More images coming soon.</p>
+        <button class="back-button" onclick="goHome()">← Back to Homepage</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://facebook.com/AnTHony" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook">
+    </a>
+    <a href="https://instagram.com/is_urfav.anthony" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+    </a>
+    <a href="mailto:anthonyaronchay@gmail.com">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Gmail">
+    </a>
+  </footer>
+
+</body>
+</html>
+
